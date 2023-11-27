@@ -35,13 +35,13 @@ public class PTablero extends JPanel {
                 if ((i == 3 || i == 4) && (j == 3 || j == 4)) {
                     ImageIcon icon;
                     if (i == 3 && j == 3) {
-                        icon = new ImageIcon("media/ficha negra.png");
+                        icon = new ImageIcon("media/ficha blanca.png");
                     } else if (i == 3 && j == 4) {
-                        icon = new ImageIcon("media/ficha blanca.png");
-                    } else if (i == 4 && j == 3) {
-                        icon = new ImageIcon("media/ficha blanca.png");
-                    } else {
                         icon = new ImageIcon("media/ficha negra.png");
+                    } else if (i == 4 && j == 3) {
+                        icon = new ImageIcon("media/ficha negra.png");
+                    } else {
+                        icon = new ImageIcon("media/ficha blanca.png");
                     }
                     button.setIcon(icon);
                 }
@@ -95,8 +95,5 @@ public class PTablero extends JPanel {
         }
     }
 
-	public void actualizarTablero() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }

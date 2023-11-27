@@ -19,7 +19,7 @@ public class Othello extends JFrame implements ActionListener {
     public JButton[][] jBotones = new JButton[8][8];
     private JLabel lResultado;
     private JLabel lResultado2;
-
+    private JButton botonReiniciar;
     
     
     public Othello () {
@@ -66,9 +66,19 @@ public class Othello extends JFrame implements ActionListener {
 
         tablero = new PTablero(matriz, this);
         this.add(tablero, BorderLayout.CENTER);
-       
+        botonReiniciar = new JButton("Reiniciar");
+        botonReiniciar.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                reiniciarJuego(); 
+            }
+        });
 
+        JPanel panelReinicio = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        panelReinicio.add(botonReiniciar);
+        this.add(panelReinicio, BorderLayout.SOUTH);
     }
+
+    
 
     
     public void actionPerformed(ActionEvent e) {
@@ -227,6 +237,7 @@ public class Othello extends JFrame implements ActionListener {
         int fichasBlancas = 0;
         int fichasVacias = 0;
 
+  
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (matriz[i][j] != null) {
@@ -242,8 +253,11 @@ public class Othello extends JFrame implements ActionListener {
         }
 
      
-        if (fichasVacias == 0) {
-          
+        if (fichasVacias == 0 || fichasNegras == 0 || fichasBlancas == 0) {
+       
+            botonReiniciar.setEnabled(true);
+
+      
             if (fichasNegras > fichasBlancas) {
                 mostrarMensajeGanador("¡Jugador Negro ha ganado!");
             } else if (fichasBlancas > fichasNegras) {
@@ -252,15 +266,12 @@ public class Othello extends JFrame implements ActionListener {
                 mostrarMensajeGanador("¡Empate!");
             }
 
-          
-            return true;  
+            return true;
         }
 
-      
-        return fichasNegras == 0 || fichasBlancas == 0;
+    
+        return false;
     }
-
-
     @SuppressWarnings("unused")
 	private void mostrarMensajeGanador(String mensaje) {
         int fichasNegras = Integer.parseInt(lResultado.getText());
@@ -285,11 +296,25 @@ public class Othello extends JFrame implements ActionListener {
    
     }
 
- 
 
     public static void main(String[] args) {
     	Othello othello = new Othello();
         othello.setVisible(true);
     }
+   
+	private void reiniciarJuego() { 
+
+	    for (int i = 0; i < 8; i++) {
+	        for (int j = 0; j < 8; j++) {
+	            matriz[i][j] = null;
+	        }
+	    }
+
+
+	    matriz[3][3] = "B"; 
+	    matriz[3][4] = "N"; 
+	    matriz[4][3] = "N"; 
+	    matriz[4][4] = "B"; 
+	}
 }
 
