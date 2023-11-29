@@ -304,7 +304,7 @@ public class Othello extends JFrame implements ActionListener {
         othello.setVisible(true);
     }
     
-    @SuppressWarnings("unused")
+   
     private void cambiarTurno() {
         
         if (!hayMovimientosValidos()) {
