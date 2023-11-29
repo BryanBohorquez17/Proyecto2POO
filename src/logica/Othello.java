@@ -25,7 +25,7 @@ public class Othello extends JFrame implements ActionListener {
     public Othello () {
         super("Othello POO");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(900, 900);
+        this.setSize(800, 800);
         this.setLayout(new BorderLayout());
 
      
@@ -107,7 +107,7 @@ public class Othello extends JFrame implements ActionListener {
 
         
                 if (hayGanador()) {
-                    mostrarMensajeGanador();
+                    mostrarMensajeGanador2();
                 }
             }
         }
@@ -281,7 +281,7 @@ public class Othello extends JFrame implements ActionListener {
 
     
     }
-    private void mostrarMensajeGanador() {
+    private void mostrarMensajeGanador2() {
         int fichasNegras = Integer.parseInt(lResultado.getText());
         int fichasBlancas = Integer.parseInt(lResultado2.getText());
 
@@ -300,6 +300,16 @@ public class Othello extends JFrame implements ActionListener {
     public static void main(String[] args) {
     	Othello othello = new Othello();
         othello.setVisible(true);
+    }
+    
+    @SuppressWarnings("unused")
+    private void cambiarTurno() {
+        
+        if (!hayMovimientosValidos()) {
+        
+            System.out.println("¡Jugador " + jugadorActual + " pierde el turno!");
+       
+        }
     }
    
 	private void reiniciarJuego() { 
