@@ -108,11 +108,13 @@ public class Othello extends JFrame implements ActionListener {
         
                 if (hayGanador()) {
                     mostrarMensajeGanador2();
+                    
                 }
+                cambiarTurno();
             }
         }
     }
-    @SuppressWarnings("unused")
+   
 	private boolean hayMovimientosValidos() {
        
         for (int i = 0; i < 8; i++) {
