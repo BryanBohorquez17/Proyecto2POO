@@ -30,10 +30,14 @@ public class Othello extends JFrame implements ActionListener {
         super("Othello POO");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 <<<<<<< HEAD
+<<<<<<< HEAD
         this.setSize(800, 800);
 =======
         this.setSize(900, 900);
 >>>>>>> c06c5f78ef01792f76cc5bd9001c6b5ce86c12c7
+=======
+        this.setSize(900, 900);
+>>>>>>> parent of 1996b73 (se agrega cuando un mensaje cuando alguien pierde el turno y se pone mas pequeña la pestaña del juego)
         this.setLayout(new BorderLayout());
 
      
@@ -124,10 +128,14 @@ public class Othello extends JFrame implements ActionListener {
         
                 if (hayGanador()) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                     mostrarMensajeGanador2();
 =======
                     mostrarMensajeGanador();
 >>>>>>> c06c5f78ef01792f76cc5bd9001c6b5ce86c12c7
+=======
+                    mostrarMensajeGanador();
+>>>>>>> parent of 1996b73 (se agrega cuando un mensaje cuando alguien pierde el turno y se pone mas pequeña la pestaña del juego)
                 }
             }
         }
@@ -322,10 +330,14 @@ public class Othello extends JFrame implements ActionListener {
     
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     private void mostrarMensajeGanador2() {
 =======
     private void mostrarMensajeGanador() {
 >>>>>>> c06c5f78ef01792f76cc5bd9001c6b5ce86c12c7
+=======
+    private void mostrarMensajeGanador() {
+>>>>>>> parent of 1996b73 (se agrega cuando un mensaje cuando alguien pierde el turno y se pone mas pequeña la pestaña del juego)
         int fichasNegras = Integer.parseInt(lResultado.getText());
         int fichasBlancas = Integer.parseInt(lResultado2.getText());
 
@@ -350,6 +362,7 @@ public class Othello extends JFrame implements ActionListener {
         othello.setVisible(true);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     @SuppressWarnings("unused")
     private void cambiarTurno() {
@@ -360,6 +373,8 @@ public class Othello extends JFrame implements ActionListener {
        
         }
     }
+=======
+>>>>>>> parent of 1996b73 (se agrega cuando un mensaje cuando alguien pierde el turno y se pone mas pequeña la pestaña del juego)
    
 	private void reiniciarJuego() { 
 
